@@ -17,4 +17,7 @@ sh /root/checkip.sh && sh /root/cloudbk.sh
 echo "*/15    *       *       *       *       root    /usr/bin/nice -n20 /root/checkip.sh" >> /etc/crontab
 echo "1       21      *       *       6       root    /usr/bin/nice -n20 /root/cloudbk.sh" >> /etc/crontab
 echo "" >> /etc/crontab
+pkill cron
+/usr/sbin/cron -s &
+
 
