@@ -1,4 +1,5 @@
 #!/bin/sh
+sleep 5m
 . /etc/inc/cloud
 
 ### Binaries ###
