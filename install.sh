@@ -1,4 +1,9 @@
 #/bin/sh
+#doi voi pfsense 2.1
+# setenv  PACKAGESITE http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/ports/i386/packages-8.3-release/Latest/
+# pkg_add -r unzip
+# rehash
+
 # If pkg-ng is not yet installed, bootstrap it:
 if ! /usr/sbin/pkg -N 2> /dev/null; then
   echo "FreeBSD pkgng not installed. Installing..."
