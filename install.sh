@@ -25,8 +25,3 @@ cp /root/cloudbk.sh /usr/local/etc/rc.d/
 cd /root/
 ./checkip.sh
 ./cloudbk.sh
-
-echo "Cai dat Cron"
-echo "pfSsh.php"
-echo "playback installpkg Cron"
-pfSsh.php
