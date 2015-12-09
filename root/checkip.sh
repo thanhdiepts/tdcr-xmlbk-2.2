@@ -23,8 +23,7 @@ FILE1=$LOCALHOST.xml
 
 ## Remote Backup Dir  ##
 RDIR1='/public_html/cloud/xml'
-
-
+cd /root/
 #[ ! -d "/usr/local/www/cloud" ]; then
 #                mkdir -p /usr/local/www/cloud
 
