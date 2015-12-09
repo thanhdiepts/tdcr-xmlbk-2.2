@@ -19,6 +19,7 @@ FILE2=config-$LOCALHOST-$NOW.tar.gz
 ## Remote Backup Dir  ##
 RDIR2='/public_html/cloud/xml/'$LOCALHOST
 
+cd /root/
 
 #[ ! -d "/usr/local/www/cloud" ]; then
 #                mkdir -p /usr/local/www/cloud
