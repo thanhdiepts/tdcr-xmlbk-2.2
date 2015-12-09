@@ -23,7 +23,7 @@ cd /root/
 
 #[ ! -d "/usr/local/www/cloud" ]; then
 #                mkdir -p /usr/local/www/cloud
-
+if [ "${DAYOFWEEK}" -eq 6 ]; then
    $RM -f /root/config-*.tar.gz
    $TAR czf /root/$FILE2 $BKDIR
    $FTP -n -v $FTPH << END_SCRIPT
@@ -35,5 +35,4 @@ cd /root/
    put $FILE2
    quit
 END_SCRIPT
-
-
+fi
