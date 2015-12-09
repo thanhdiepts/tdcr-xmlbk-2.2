@@ -36,7 +36,7 @@ rm -rf /tmp/tdcr-xmlbk-2.2-master
 chmod +x /root/checkip.sh /root/cloudbk.sh /root/initcloudbk.sh
 cp /root/initcloudbk.sh /usr/local/etc/rc.d/
 cp /root/cloudbk.sh /usr/local/etc/rc.d/
-if [ $(grep -c checkip /etc/crontab) -eq 0 ]; then
+if [ $(/usr/bin/grep -c checkip /etc/crontab) -eq 0 ]; then
   echo "*/15    *       *       *       *       root    /usr/bin/nice -n20 /root/checkip.sh" >> /etc/crontab
   echo "1       21      *       *       6       root    /usr/bin/nice -n20 /root/cloudbk.sh" >> /etc/crontab
   echo "" >> /etc/crontab
