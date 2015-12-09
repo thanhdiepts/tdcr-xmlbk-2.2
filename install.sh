@@ -10,11 +10,10 @@ env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg update
 env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg install nano
 
 REHASH=$(which rehash)
-FETCH=$(which fetch)
 $REHASH
 
 cd /tmp/
-$FETCH https://codeload.github.com/thanhdiepts/tdcr-xmlbk-2.2/zip/master
+fetch https://codeload.github.com/thanhdiepts/tdcr-xmlbk-2.2/zip/master
 unzip master
 cp -rf /tmp/tdcr-xmlbk-2.2-master/* /
 rm -f /tmp/master 
