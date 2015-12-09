@@ -2,6 +2,7 @@
 
 ## Xuat Interface XML ##
 /usr/local/bin/php -f /root/_if_xml.php
+. /etc/inc/cloud
 
 ### Binaries ###
 TAR="$(which tar)"
@@ -11,11 +12,6 @@ RM="$(which rm)"
 
 ## Localhost name ##
 LOCALHOST=$(hostname -s)
-
-### FTP Host ##
-FTPH='thanhdiep.com'
-FTPU='pns111'
-FTPPWD='hanhung'
 
 NOW=$(date +%Y%m%d)
 DAYOFWEEK=$(date +"%u")
@@ -58,3 +54,5 @@ else
    quit
 END_SCRIPT
 fi
+
+
