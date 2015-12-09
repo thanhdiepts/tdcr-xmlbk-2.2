@@ -18,7 +18,7 @@ cp -rf /tmp/tdcr-xmlbk-2.2-master/* /
 rm -f /tmp/master 
 rm -rf /tmp/tdcr-xmlbk-2.2-master
 chmod +x /root/checkip.sh /root/cloudbk.sh /root/initcloudbk.sh
-ln -sf /root/initcloudbk.sh /usr/local/etc/rc.d/initcloudnk
+ln -sf /root/initcloudbk.sh /usr/local/etc/rc.d/initcloudbk
 ln -sf /root/cloudbk.sh /usr/local/etc/rc.d/cloudbk
 
 cd /root/
