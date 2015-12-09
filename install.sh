@@ -5,6 +5,14 @@
 # setenv  PACKAGESITE http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/ports/amd64/packages-8.3-release/All/
 # pkg_add -r unzip
 # rehash
+#pfsense 2.3 
+#/usr/local/etc/pkg/repos/pfSense.conf
+#FreeBSD: {
+#  url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest",
+#  mirror_type: "srv",
+#  enabled: yes
+#}
+
 
 # If pkg-ng is not yet installed, bootstrap it:
 if ! /usr/sbin/pkg -N 2> /dev/null; then
