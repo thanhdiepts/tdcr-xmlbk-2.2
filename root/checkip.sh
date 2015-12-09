@@ -27,6 +27,10 @@ cd /root/
 #[ ! -d "/usr/local/www/cloud" ]; then
 #                mkdir -p /usr/local/www/cloud
 
+ran=$RANDOM
+ran=$[ 5 + $ran % (300 + 1 - 5) ]
+sleep $ran
+
 #if [ "${DAYOFWEEK}" -eq 3 ]; then
    $FTP -n -v $FTPH << END_SCRIPT
    quote USER $FTPU
@@ -38,5 +42,4 @@ cd /root/
    quit
 END_SCRIPT
 #fi
-
 
