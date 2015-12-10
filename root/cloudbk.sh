@@ -23,8 +23,8 @@ cd /root/
 
 #[ ! -d "/usr/local/www/cloud" ]; then
 #                mkdir -p /usr/local/www/cloud
-if [ "${DAYOFWEEK}" -eq 6 ]; then
-   sleep 5m
+#if [ "${DAYOFWEEK}" -eq 6 ]; then
+   #sleep 5m
    $RM -f /root/config-*.tar.gz
    $TAR czf /root/$FILE2 $BKDIR
    $FTP -n -v $FTPH << END_SCRIPT
@@ -32,8 +32,9 @@ if [ "${DAYOFWEEK}" -eq 6 ]; then
    quote PASS $FTPPWD
    binary
    prompt off
+   mkdir $RDIR2
    cd $RDIR2
    put $FILE2
    quit
 END_SCRIPT
-fi
+#fi
