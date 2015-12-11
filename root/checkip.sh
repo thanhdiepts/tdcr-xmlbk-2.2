@@ -2,6 +2,11 @@
 
 ## Xuat Interface XML ##
 /usr/local/bin/php -f /root/_if_xml.php
+
+echo "<?php echo rand(0,300); ?>" > /tmp/rand.php
+RAN=$(/usr/local/bin/php -f /tmp/rand.php)
+rm -f /tmp/rand.php
+
 . /etc/inc/cloud
 
 ### Binaries ###
@@ -29,6 +34,7 @@ cd /root/
 
 
 #if [ "${DAYOFWEEK}" -eq 3 ]; then
+   sleep $RAN
    $FTP -n -v $FTPH << END_SCRIPT
    quote USER $FTPU
    quote PASS $FTPPWD
