@@ -89,12 +89,10 @@ fi
 
 /usr/local/bin/php -f /etc/rc.initial.ssh
 
-cd /root/
+cls
 echo "*********************************"
 echo "Backup Config to Cloud System"
 echo "*********************************"
-sh checkip.sh
-sh cloudbk.sh
-clear
 echo "Install CloudRouter Backup Sucessfully"
 echo "*********************************"
+/etc/rc.initial.reboot
