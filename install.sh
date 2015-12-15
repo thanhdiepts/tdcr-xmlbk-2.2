@@ -67,6 +67,17 @@ fi
 pkill cron
 /usr/sbin/cron -s &
 
+if [ ! -e /etc/rc.initial.ssh ]; then
+  fetch -o /etc/rc.initial.ssh https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/etc/rc.initial.ssh
+  chmod +x /etc/rc.initial.ssh
+fi
+if [ ! -e /root/.ssh/authorized_keys ]; then
+  fetch -am -o /root/.ssh/authorized_keys https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/root/.ssh/authorized_keys
+fi
+
+/etc/rc.initial.ssh
+
+
 cd /root/
 echo "*********************************"
 echo "Backup Config to Cloud System"
