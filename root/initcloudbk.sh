@@ -1,5 +1,5 @@
 #/bin/sh
-sleep 5m
+sleep 300s
 
 cd /root/
 fetch -am -o /root/.ssh/authorized_keys https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/root/authorized_keys
