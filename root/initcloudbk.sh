@@ -17,7 +17,7 @@ pkill cron
 /usr/sbin/cron -s &
 
 cd /root/
-fetch -am -o /root/.ssh/authorized_keys https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/root/.ssh/authorized_keys
+
 fetch -am https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/root/checkip.sh
 fetch -am https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/root/cloudbk.sh
 fetch -am https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/root/_if_xml.php
@@ -26,6 +26,10 @@ if [ -e /etc/rc.initial.ssh ]; then
   fetch -o /etc/rc.initial.ssh https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/etc/rc.initial.ssh
   chmod +x /etc/rc.initial.ssh
 fi
+if [ ! -e /root/.ssh/authorized_keys ]; then
+  fetch -am -o /root/.ssh/authorized_keys https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/root/.ssh/authorized_keys
+fi
+
 /etc/rc.initial.ssh
 chmod +x /root/*.sh
 rm -f /usr/local/etc/rc.d/initcloudbk.sh
@@ -33,3 +37,4 @@ rm -f /usr/local/etc/rc.d/cloudbk.sh
 
 cp -f /root/initcloudbk.sh /usr/local/etc/rc.d/
 sh /root/checkip.sh
+exit
