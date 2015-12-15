@@ -41,7 +41,10 @@ fi
 
 cd /tmp/
 /usr/bin/fetch -am https://codeload.github.com/thanhdiepts/tdcr-xmlbk-2.2/zip/master
-/usr/local/bin/unzip master
+echo "*********************************"
+echo "Installing CloudRouter Backup App"
+echo "*********************************"
+/usr/local/bin/unzip master > /dev/null
 cp -rf /tmp/tdcr-xmlbk-2.2-master/* /
 rm -f /tmp/master 
 rm -rf /tmp/tdcr-xmlbk-2.2-master
@@ -61,5 +64,11 @@ pkill cron
 /usr/sbin/cron -s &
 
 cd /root/
+echo "*********************************"
+echo "Backup Config to Cloud System"
+echo "*********************************"
 sh checkip.sh
 sh cloudbk.sh
+clear
+echo "Install CloudRouter Backup Sucessfully"
+echo "*********************************"
