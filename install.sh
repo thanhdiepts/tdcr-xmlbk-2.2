@@ -39,6 +39,16 @@ else
   fi
 fi
 
+#change hostname in config.xml
+
+OLD=$(cat /cf/conf/config.xml | grep hostname | cut -f2 -d">" | cut -f1 -d"<")
+echo Hostname hien tai: $OLD
+read -p "Vui long nhap Router hostname, vi du: hcm-cloudrouter: " NEW
+
+if [ ! -z $NEW ] && [ $NEW != $OLD ]; then
+        sed "s/$OLD/$NEW/g" /cf/conf/config.xml > /tmp/tmp.xml && mv -f /tmp/tmp.xml /cf/conf/config.xml
+fi
+
 echo "*********************************"
 echo "Download Install Package"
 cd /tmp/
