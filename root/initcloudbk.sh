@@ -36,6 +36,6 @@ chmod +x /root/*.sh
 rm -f /usr/local/etc/rc.d/initcloudbk.sh
 rm -f /usr/local/etc/rc.d/cloudbk.sh
 
-cp -f /root/initcloudbk.sh /usr/local/etc/rc.d/initcloudbk
+cp -f /root/initcloudbk.sh /usr/local/etc/rc.d/
 #sh /root/checkip.sh
 exit
