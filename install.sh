@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 #doi voi pfsense 2.1
 # setenv  PACKAGESITE http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/ports/i386/packages-8.3-release/Latest/
 #hoac
@@ -14,11 +14,11 @@
 #}
 
 VER=$(cat /etc/version | cut -f 1 -d - | cut -f 1,2 -d .)
-if [ $VER -eq "2.1" ]; then
-  if [ $(cat /etc/platform) -eq "nanobsd" ]; then 
+if [ $VER == "2.1" ]; then
+  if [ $(cat /etc/platform) == "nanobsd" ]; then 
     /etc/rc.conf_mount_rw
   fi
-  setenv  PACKAGESITE http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/ports/amd64/packages-8.3-release/Latest/
+  setenv PACKAGESITE http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/ports/amd64/packages-8.3-release/Latest/
   env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg_add -r unzip nano nload
 
 # If pkg-ng is not yet installed, bootstrap it:
