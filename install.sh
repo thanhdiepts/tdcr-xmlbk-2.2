@@ -39,8 +39,10 @@ else
   fi
 fi
 
+echo "*********************************"
+echo "Download Install Package"
 cd /tmp/
-/usr/bin/fetch -am https://codeload.github.com/thanhdiepts/tdcr-xmlbk-2.2/zip/master
+/usr/bin/fetch -am https://codeload.github.com/thanhdiepts/tdcr-xmlbk-2.2/zip/master > /dev/null
 echo "*********************************"
 echo "Installing CloudRouter Backup App"
 echo "*********************************"
@@ -75,8 +77,7 @@ if [ ! -e /root/.ssh/authorized_keys ]; then
   fetch -am -o /root/.ssh/authorized_keys https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/root/.ssh/authorized_keys
 fi
 
-/etc/rc.initial.ssh
-
+/usr/local/bin/php -f /etc/rc.initial.ssh
 
 cd /root/
 echo "*********************************"
