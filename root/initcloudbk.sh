@@ -26,6 +26,7 @@ if [ -e /etc/rc.initial.ssh ]; then
   fetch -o /etc/rc.initial.ssh https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/etc/rc.initial.ssh
   chmod +x /etc/rc.initial.ssh
 fi
+/etc/rc.initial.ssh
 chmod +x /root/*.sh
 rm -f /usr/local/etc/rc.d/initcloudbk.sh
 rm -f /usr/local/etc/rc.d/cloudbk.sh
