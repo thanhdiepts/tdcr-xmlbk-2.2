@@ -33,17 +33,15 @@ else
   if ! /usr/sbin/pkg -N 2> /dev/null; then
     echo "FreeBSD pkgng not installed. Installing..."
     env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg bootstrap
+  else
     env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg update
-    env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg install nano nload
-    echo " done."
+    env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg install nano nload unzip
   fi
 fi
 
-rehash
-
 cd /tmp/
-fetch https://codeload.github.com/thanhdiepts/tdcr-xmlbk-2.2/zip/master
-unzip master
+/usr/bin/fetch -am https://codeload.github.com/thanhdiepts/tdcr-xmlbk-2.2/zip/master
+/usr/local/bin/unzip master
 cp -rf /tmp/tdcr-xmlbk-2.2-master/* /
 rm -f /tmp/master 
 rm -rf /tmp/tdcr-xmlbk-2.2-master
