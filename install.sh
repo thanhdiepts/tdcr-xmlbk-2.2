@@ -33,10 +33,9 @@ else
   if ! /usr/sbin/pkg -N 2> /dev/null; then
     echo "FreeBSD pkgng not installed. Installing..."
     env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg bootstrap
-  else
     env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg update
-    env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg install nano nload unzip
   fi
+  env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg install nano nload unzip
 fi
 
 #change hostname in config.xml
