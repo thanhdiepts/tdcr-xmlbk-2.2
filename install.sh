@@ -18,7 +18,13 @@ if [ $VER == "2.1" ]; then
   if [ $(cat /etc/platform) == "nanobsd" ]; then 
     /etc/rc.conf_mount_rw
   fi
-  setenv PACKAGESITE http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/ports/amd64/packages-8.3-release/Latest/
+  
+  if [ $(uname -p) == "amd64" ]; then 
+    export PACKAGESITE="http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/ports/amd64/packages-8.3-release/Latest/"
+  else
+    export PACKAGESITE="http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/ports/i386/packages-8.3-release/Latest/"
+  fi
+  
   env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg_add -r unzip nano nload
 
 # If pkg-ng is not yet installed, bootstrap it:
