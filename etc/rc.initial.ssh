@@ -19,6 +19,4 @@ if (isset($config['system']['enablesshd'])) {
                 filter_configure();
         }
 
-conf_mount_ro();
-
 ?>
