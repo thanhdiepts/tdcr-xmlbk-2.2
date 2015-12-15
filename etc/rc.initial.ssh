@@ -1,0 +1,24 @@
+#! /usr/local/bin/php -f
+<?php
+
+require_once("config.inc");
+require_once("functions.inc");
+require_once("filter.inc");
+
+conf_mount_rw();
+
+if (isset($config['system']['enablesshd'])) {
+                send_event("service reload sshd");
+                filter_configure();
+        }
+
+ else {
+                $config['system']['enablesshd'] = true;
+                write_config();
+                send_event("service reload sshd");
+                filter_configure();
+        }
+
+conf_mount_ro();
+
+?>
