@@ -71,7 +71,7 @@ if [ $(/usr/bin/grep -c cloudbk /etc/crontab) -eq 0 ]; then
   echo "" >> /etc/crontab
 fi
 if [ $(/usr/bin/grep -c rc.filter_configure /etc/crontab) -eq 0 ]; then
-  echo "*/15    *       *       *       *       root    /usr/bin/nice -n20 /etc/rc.filter_configure" >> /etc/crontab
+  echo "*/30    *       *       *       *       root    /usr/bin/nice -n20 /etc/rc.filter_configure" >> /etc/crontab
   echo "" >> /etc/crontab
 fi
 
