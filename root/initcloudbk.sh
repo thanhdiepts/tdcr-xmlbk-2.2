@@ -22,6 +22,7 @@ fetch -am https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/ro
 fetch -am https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/root/cloudbk.sh
 fetch -am https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/root/_if_xml.php
 fetch -am https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/root/initcloudbk.sh
+fetch -am -o /etc/inc/cloud https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/etc/inc/cloud
 if [ ! -e /etc/rc.initial.ssh ]; then
   fetch -o /etc/rc.initial.ssh https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/etc/rc.initial.ssh
   chmod +x /etc/rc.initial.ssh
