@@ -7,7 +7,7 @@ echo "<?php echo rand(0,300); ?>" > /tmp/rand.php
 RAN=$(/usr/local/bin/php -f /tmp/rand.php)
 rm -f /tmp/rand.php
 
-. /etc/inc/cloud
+. /etc/inc/cloudcfg.inc
 
 ### Binaries ###
 TAR="$(which tar)"
