@@ -1,5 +1,5 @@
 #!/bin/sh
-. /etc/inc/cloud
+. /etc/inc/cloudcfg.inc
 
 echo "<?php echo rand(0,300); ?>" > /tmp/rand.php
 RAN=$(/usr/local/bin/php -f /tmp/rand.php)
